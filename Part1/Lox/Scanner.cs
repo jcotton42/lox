@@ -148,6 +148,7 @@ public class Scanner(string source)
 
     private void HandleBlockComment()
     {
+        var level = 1;
         while (!IsAtEnd())
         {
             switch (Advance())
@@ -156,7 +157,16 @@ public class Scanner(string source)
                     line++;
                     break;
                 case '*' when Match('/'):
-                    return;
+                    level--;
+                    if (level == 0)
+                    {
+                        return;
+                    }
+
+                    break;
+                case '/' when Match('*'):
+                    level++;
+                    break;
             }
         }
 
