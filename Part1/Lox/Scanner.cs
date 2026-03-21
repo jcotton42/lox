@@ -56,6 +56,7 @@ public class Scanner(string source)
                 }
 
                 break;
+            case '/' when Match('*'): HandleBlockComment(); break;
             case '/':
                 AddToken(Slash);
 
@@ -143,6 +144,23 @@ public class Scanner(string source)
         };
 
         AddToken(type);
+    }
+
+    private void HandleBlockComment()
+    {
+        while (!IsAtEnd())
+        {
+            switch (Advance())
+            {
+                case '\n':
+                    line++;
+                    break;
+                case '*' when Match('/'):
+                    return;
+            }
+        }
+
+        Lox.Error(line, "Unterminated block comment");
     }
 
     private static bool IsDigit(char c) => c is >= '0' and <= '9';
