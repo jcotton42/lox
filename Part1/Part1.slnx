@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="Lox.Generator.Tests/Lox.Generator.Tests.csproj" />
-  <Project Path="Lox.Generator/Lox.Generator.csproj" />
+  <Project Path="Lox.Analyzers.Tests/Lox.Analyzers.Tests.csproj" />
+  <Project Path="Lox.Analyzers/Lox.Analyzers.csproj" />
   <Project Path="Lox/Lox.csproj" />
 </Solution>

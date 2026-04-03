@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 
-namespace Lox.Generator;
+namespace Lox.Analyzers;
 
 public readonly struct EquatableImmutableArray<T> : IEquatable<EquatableImmutableArray<T>>
 {

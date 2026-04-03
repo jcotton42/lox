@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference
-      Include="..\Lox.Generator\Lox.Generator.csproj"
+      Include="..\Lox.Analyzers\Lox.Analyzers.csproj"
       OutputItemType="Analyzer"
       ReferenceOutputAssembly="False" />
   </ItemGroup>

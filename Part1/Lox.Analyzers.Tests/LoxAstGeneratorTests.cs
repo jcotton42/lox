@@ -4,7 +4,7 @@ using Microsoft.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Lox.Generator.Tests;
+namespace Lox.Analyzers.Tests;
 
 public sealed class LoxAstGeneratorTests : CSharpSourceGeneratorTest<LoxAstGenerator, DefaultVerifier>
 {

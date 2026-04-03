@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Lox.Generator;
+namespace Lox.Analyzers;
 
 public sealed class IndentingStringBuilder
 {

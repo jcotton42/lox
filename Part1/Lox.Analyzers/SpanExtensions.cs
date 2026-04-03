@@ -1,6 +1,6 @@
 using System;
 
-namespace Lox.Generator;
+namespace Lox.Analyzers;
 
 public static class SpanExtensions
 {

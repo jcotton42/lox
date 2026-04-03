@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Lox.Generator;
+namespace Lox.Analyzers;
 
 [Generator(LanguageNames.CSharp)]
 public sealed class LoxAstGenerator : IIncrementalGenerator

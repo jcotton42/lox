@@ -4,7 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lox.Generator.Tests</RootNamespace>
+    <RootNamespace>Lox.Analyzers.Tests</RootNamespace>
     <TargetFramework>net10.0</TargetFramework>
     <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
   </PropertyGroup>
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lox.Generator\Lox.Generator.csproj" />
+    <ProjectReference Include="..\Lox.Analyzers\Lox.Analyzers.csproj" />
   </ItemGroup>
 
 </Project>
