@@ -27,7 +27,17 @@ public sealed class LoxAstGeneratorTests : CSharpSourceGeneratorTest<LoxAstGener
             {
                 public abstract record Expr
                 {
-                    public sealed record Binary(Expr Left, Token Operator, Expr Right) : Expr;
+                    public interface Visitor<out T>
+                    {
+                        T VisitBinary(Binary expr);
+                    }
+
+                    public abstract T Accept<T>(Visitor<T> visitor);
+
+                    public sealed record Binary(Expr Left, Token Operator, Expr Right) : Expr
+                    {
+                        public override T Accept<T>(Visitor<T> visitor) => visitor.VisitBinary(this);
+                    }
                 }
             }
 
@@ -37,7 +47,8 @@ public sealed class LoxAstGeneratorTests : CSharpSourceGeneratorTest<LoxAstGener
     private async Task RunTest(string input, [StringSyntax("c#")] string expected)
     {
         TestState.AdditionalFiles.Add(("Expr.txt", input));
-        TestState.GeneratedSources.Add((typeof(LoxAstGenerator), "Expr.g.cs", SourceText.From(expected, Encoding.UTF8, SourceHashAlgorithm.Sha1)));
+        TestState.GeneratedSources.Add((typeof(LoxAstGenerator), "Expr.g.cs",
+            SourceText.From(expected, Encoding.UTF8, SourceHashAlgorithm.Sha1)));
         CompilerDiagnostics = CompilerDiagnostics.None;
         await RunAsync(TestContext.Current.CancellationToken);
     }
