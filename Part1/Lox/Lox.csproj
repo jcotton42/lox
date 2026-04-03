@@ -5,6 +5,18 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference
+      Include="..\Lox.Generator\Lox.Generator.csproj"
+      OutputItemType="Analyzer"
+      ReferenceOutputAssembly="False" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Expr.txt" />
+  </ItemGroup>
 
 </Project>
